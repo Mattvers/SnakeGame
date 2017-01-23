@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBoxCanvas = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +64,10 @@
             this.labelScore.TabIndex = 2;
             this.labelScore.Text = "0";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 1000;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -88,6 +94,7 @@
         private System.Windows.Forms.PictureBox pictureBoxCanvas;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelScore;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 

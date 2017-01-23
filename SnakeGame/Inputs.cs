@@ -20,7 +20,7 @@ namespace SnakeGame
             keyTable[key]= state;
         }
 
-        //Function to check the correct button was pressed
+        //Function to check the correct button was pressed 
         public static bool KeyPressed(Keys key)
         {
             if (keyTable[key] == null)
