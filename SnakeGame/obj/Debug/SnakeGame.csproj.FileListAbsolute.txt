@@ -1,0 +1,9 @@
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe.config
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\bin\Debug\SnakeGame.pdb
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csprojResolveAssemblyReference.cache
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\obj\Debug\SnakeGame.FormMain.resources
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Properties.Resources.resources
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.Cache
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
+D:\Programing\PROJEKTY\1.GraSnake\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
