@@ -33,6 +33,8 @@ namespace SnakeGame
         //function starts a new game, clear all values from last game, and create new player object 
         private void StartGame()
         {
+            labelGameOver.Visible = false;
+            //clear settings
             new Settings();
 
             //Createing a new player object
@@ -88,6 +90,44 @@ namespace SnakeGame
 
             //refreshing Data on Canvas Screen
             pictureBoxCanvas.Invalidate();
+        }
+
+        //function that drawing a snake in pictureBox or shows end game screen
+        private void pictureBoxCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics canvas = e.Graphics; //which canvas to use
+
+            //makeing a snake move
+            if (Settings.GameOver != false)
+            {
+                //create a value of snake color
+                Brush snakeColor;
+                //First i draw a snake on canvas
+                for(int i=0; i<Snake.Count;i++)
+                {
+                    //first put red color of snake head, and black color to rest body
+                    if (i == 0)
+                        snakeColor = Brushes.Red;
+                    else
+                        snakeColor = Brushes.Black;
+
+                    //drawing snake
+                    canvas.FillRectangle(snakeColor, new Rectangle(Snake[i].X * Settings.Width, Snake[i].Y * Settings.Height, Settings.Width, Settings.Height));
+
+                    //drawing snake food
+                    canvas.FillEllipse(Brushes.Yellow, new Rectangle(food.X * Settings.Width, food.Y * Settings.Height, Settings.Width, Settings.Height));
+
+                }
+
+            }
+            else
+            {
+                //creating a game over message
+                string gameOverMessage = "Game Over \nYour Score is: " + Settings.Score + "\nEnter to NewGame";
+                labelGameOver.Text = gameOverMessage;
+                labelGameOver.Visible = true;
+            }
+
         }
     }
 }

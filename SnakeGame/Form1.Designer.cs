@@ -33,6 +33,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.labelGameOver = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             this.pictureBoxCanvas.Size = new System.Drawing.Size(663, 415);
             this.pictureBoxCanvas.TabIndex = 0;
             this.pictureBoxCanvas.TabStop = false;
+            this.pictureBoxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxCanvas_Paint);
             // 
             // labelName
             // 
@@ -68,12 +70,24 @@
             // 
             this.gameTimer.Interval = 1000;
             // 
+            // labelGameOver
+            // 
+            this.labelGameOver.AutoSize = true;
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelGameOver.Location = new System.Drawing.Point(233, 151);
+            this.labelGameOver.Name = "labelGameOver";
+            this.labelGameOver.Size = new System.Drawing.Size(122, 44);
+            this.labelGameOver.TabIndex = 3;
+            this.labelGameOver.Text = "label1";
+            this.labelGameOver.Visible = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(682, 473);
+            this.Controls.Add(this.labelGameOver);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxCanvas);
@@ -82,7 +96,7 @@
             this.Name = "FormMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SnakeGame";           
+            this.Text = "SnakeGame";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -95,6 +109,7 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelScore;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label labelGameOver;
     }
 }
 
