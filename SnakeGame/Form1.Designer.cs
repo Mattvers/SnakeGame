@@ -82,7 +82,7 @@
             this.Name = "FormMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SnakeGame";
+            this.Text = "SnakeGame";           
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
