@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
-    public partial class FormMain : System.Windows.Forms.Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
 
         private List<Body> Snake = new List<Body>(); //list of snake body points;
         private Body food = new Body();  //food object that snake eats to growing
 
-        public FormMain()
+        public Form1()
         {
             InitializeComponent();
 
             new Settings(); //reset settings 
 
             gameTimer.Interval = 1000 / Settings.Speed;
-            gameTimer.Tick += UpdateScreen();
+            gameTimer.Tick += UpdateScreen;
             gameTimer.Start(); //start timer
 
             //starting new game
@@ -66,23 +66,25 @@ namespace SnakeGame
         private void UpdateScreen(object sender, EventArgs e)
         {
             //First i checking that gameOver is true
-            if (Settings.GameOver == true)
+            if (Settings.GameOver)
             {
                 // if you click ENTER it will start a new game;
                 if (Inputs.KeyPressed(Keys.Enter))
+                {
                     StartGame();
+                }
             }
             else
             {
                 //checking correct direction buttons clicked
-                if (Inputs.KeyPressed(Keys.Right) && Settings.Direction != direction.Left)
-                    Settings.Direction = direction.Right;
-                else if (Inputs.KeyPressed(Keys.Left) && Settings.Direction != direction.Right)
-                    Settings.Direction = direction.Left;
-                else if (Inputs.KeyPressed(Keys.Up) && Settings.Direction != direction.Down)
-                    Settings.Direction = direction.Up;
-                else if (Inputs.KeyPressed(Keys.Down) && Settings.Direction != direction.Up)
-                    Settings.Direction = direction.Down;
+                if (Inputs.KeyPressed(Keys.Right) && Settings.direction != Direction.Left)
+                    Settings.direction = Direction.Right;
+                else if (Inputs.KeyPressed(Keys.Left) && Settings.direction != Direction.Right)
+                    Settings.direction = Direction.Left;
+                else if (Inputs.KeyPressed(Keys.Up) && Settings.direction != Direction.Down)
+                    Settings.direction = Direction.Up;
+                else if (Inputs.KeyPressed(Keys.Down) && Settings.direction != Direction.Up)
+                    Settings.direction = Direction.Down;
 
                 //adding movePlayer function
                 MovePlayer();
@@ -98,7 +100,7 @@ namespace SnakeGame
             Graphics canvas = e.Graphics; //which canvas to use
 
             //makeing a snake move
-            if (Settings.GameOver != false)
+            if (!Settings.GameOver)
             {
                 //create a value of snake color
                 Brush snakeColor;
@@ -128,6 +130,51 @@ namespace SnakeGame
                 labelGameOver.Visible = true;
             }
 
+        }
+
+        //function that snake moveing on the field
+        private void MovePlayer()
+        {
+            for (int i = Snake.Count - 1; i >= 0; i--) 
+            {
+                //move head of snake
+                if (i == 0) 
+                {
+                    switch (Settings.direction)
+                    {
+                        case Direction.Right:
+                            Snake[i].X++;
+                            break;
+                        case Direction.Down:
+                            Snake[i].Y++;
+                            break;
+                        case Direction.Up:
+                            Snake[i].Y--;
+                            break;
+                        case Direction.Left:
+                            Snake[i].X--;
+                            break;
+
+                    }
+                }
+                else  //rest of snake body
+                {
+                    Snake[i].X = Snake[i - 1].X;
+                    Snake[i].Y = Snake[i - 1].Y;
+                }
+            }
+        }
+
+        //event that if key on keyboard is down that change state of him to true
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Inputs.ChangeState(e.KeyCode, true);
+        }
+
+        //event that if key on keyboard is down that change state of him to false
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Inputs.ChangeState(e.KeyCode, false);
         }
     }
 }

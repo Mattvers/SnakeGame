@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SnakeGame
 {
     //enum value to know the direction of snake moveing
-    public enum direction  
+    public enum Direction  
     {
         Up,
         Down,
@@ -24,18 +24,18 @@ namespace SnakeGame
         public static int Score { get; set; }  // how many points player have
         public static int Points { get; set; } //how many poinst will be added
         public static bool GameOver { get; set; } //is the game continiue
-        public static direction Direction { get; set; }
+        public static Direction direction { get; set; }
 
         //class constructor with default values
         public Settings()
         {
-            Width = 20;
-            Height = 20;
-            Speed = 10;
+            Width = 16;
+            Height = 16;
+            Speed = 16;
             Score = 0;
             Points = 10;
             GameOver = false;
-            Direction = direction.Right;
+            direction = Direction.Right;
         }
     }
 }

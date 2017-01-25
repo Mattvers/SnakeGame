@@ -1,6 +1,6 @@
 ﻿namespace SnakeGame
 {
-    partial class FormMain
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             // 
             this.pictureBoxCanvas.Location = new System.Drawing.Point(12, 12);
             this.pictureBoxCanvas.Name = "pictureBoxCanvas";
-            this.pictureBoxCanvas.Size = new System.Drawing.Size(663, 415);
+            this.pictureBoxCanvas.Size = new System.Drawing.Size(650, 400);
             this.pictureBoxCanvas.TabIndex = 0;
             this.pictureBoxCanvas.TabStop = false;
             this.pictureBoxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxCanvas_Paint);
@@ -50,7 +50,7 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(270, 433);
+            this.labelName.Location = new System.Drawing.Point(268, 415);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(111, 31);
             this.labelName.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             this.labelScore.AutoSize = true;
             this.labelScore.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.Location = new System.Drawing.Point(387, 433);
+            this.labelScore.Location = new System.Drawing.Point(385, 415);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(31, 31);
             this.labelScore.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // gameTimer
             // 
-            this.gameTimer.Interval = 1000;
+            this.gameTimer.Interval = 1;
             // 
             // labelGameOver
             // 
@@ -81,22 +81,24 @@
             this.labelGameOver.Text = "label1";
             this.labelGameOver.Visible = false;
             // 
-            // FormMain
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(682, 473);
+            this.ClientSize = new System.Drawing.Size(682, 453);
             this.Controls.Add(this.labelGameOver);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxCanvas);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormMain";
+            this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SnakeGame";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
